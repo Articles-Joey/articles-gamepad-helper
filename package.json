@@ -1,0 +1,29 @@
+{
+  "name": "@articles-media/articles-gamepad-helper",
+  "description": "Shared code for Articles Media projects and games that use a gamepad.",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "src",
+    "styles"
+  ],
+  "exports": {
+    ".": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Articles Media",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": ">=19.2.3",
+    "react-dom": ">=19.2.3"
+  },
+  "devDependencies": {
+    "classnames": "^2.5.1",
+    "sass": "^1.97.2"
+  }
+}
