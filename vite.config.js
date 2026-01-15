@@ -1,0 +1,32 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { resolve } from 'path';
+
+export default defineConfig({
+  plugins: [react()],
+  // resolve: {
+  //   alias: {
+  //     '@': resolve(__dirname, './src'),
+  //   },
+  // },
+  build: {
+    lib: {
+      entry: {
+        index: resolve(__dirname, 'index.js'),
+        GamepadPreview: resolve(__dirname, 'src/components/GamepadPreview.jsx'),
+        GamepadKeyboard: resolve(__dirname, 'src/components/GamepadKeyboard.jsx'),
+      },
+      formats: ['es', 'cjs'],
+      fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'js' : 'cjs'}`,
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        globals: {
+          react: 'React',
+          'react-dom': 'ReactDOM',
+        },
+      },
+    },
+  },
+});

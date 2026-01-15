@@ -1,6 +1,6 @@
 # Articles Gamepad Helper
 
-Shared code for Articles Media projects and games that use a gamepad.
+React components to help with game development. Primarily used for Articles Media related games but made public to help others!
 
 ## Getting Started
 
@@ -16,12 +16,25 @@ Then go to the consuming project directory and run this command.
 npm link @articles-media/articles-gamepad-helper
 ```
 
+You will need to have a dev script running to watch for changes and build the dist to see local changes
+
+```bash
+npm run dev
+```
+
 ## Package Exports
 
 - GamepadPreview
-    - SVG preview of gamepad button state
+    - Live preview of connected gamepad state via dynamic SVG
 - GamepadKeyboard
-    - Overlay to allow typing with controller without the need for keyboard and mouse.
+    - Overlay to allow typing with controller without the need for keyboard and mouse. Imagine you are on a couch or arcade machine.
+
+# Tested and supported gamepads
+✅ Wireless Xbox One Controllers (2013+)
 
 # Roadmap
-⏹️ ... 
+⏹️ Other gamepad support
+
+# TODO
+⏹️ Record video demo  
+⏹️ Create website demo  

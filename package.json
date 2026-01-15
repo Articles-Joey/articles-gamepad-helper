@@ -1,18 +1,39 @@
 {
   "name": "@articles-media/articles-gamepad-helper",
   "description": "Shared code for Articles Media projects and games that use a gamepad.",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "type": "module",
-  "main": "index.js",
+  "imports": {
+    "#root/src/*": "./src/*"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "files": [
-    "index.js",
-    "src",
-    "styles"
+    "dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Articles-Joey/articles-gamepad-helper.git"
+  },
   "exports": {
-    ".": "./index.js"
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./GamepadPreview": {
+      "import": "./dist/GamepadPreview.js",
+      "require": "./dist/GamepadPreview.cjs"
+    },
+    "./GamepadKeyboard": {
+      "import": "./dist/GamepadKeyboard.js",
+      "require": "./dist/GamepadKeyboard.cjs"
+    }
   },
   "scripts": {
+    "dev-unknown": "vite dev",
+    "dev": "nodemon --watch src --ext js,ts,css,scss,jsx,json --ignore dist --exec \"npm run build\"",
+    "build": "vite build",
+    "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -23,7 +44,14 @@
     "react-dom": ">=19.2.3"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.2",
     "classnames": "^2.5.1",
-    "sass": "^1.97.2"
+    "nodemon": "^3.1.11",
+    "react-bootstrap": "^2.10.10",
+    "sass": "^1.97.2",
+    "vite": "^7.3.1"
+  },
+  "dependencies": {
+    "zustand": "^5.0.10"
   }
 }
