@@ -18,6 +18,7 @@ export default defineConfig({
         PieMenu: resolve(__dirname, 'src/components/PieMenu.jsx'),
         XboxIcons: resolve(__dirname, 'src/XboxIcons.js'),
         useGameControllerKeyboardStore: resolve(__dirname, 'src/hooks/useGameControllerKeyboardStore.js'),
+        usePieMenuStore: resolve(__dirname, 'src/hooks/usePieMenuStore.js'),
       },
       formats: ['es', 'cjs'],
       fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'js' : 'cjs'}`,

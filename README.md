@@ -32,6 +32,8 @@ npm run dev
     - Easily configurable menu that can be used to quickly map actions to a PieMenu hidden behind a held key, defaults to LB
 - useGameControllerKeyboardStore
     - Needed store for handling component state, exported so you can watch for and set state if needed
+- usePieMenuStore
+    - Store associated with the PieMenu component
 
 # Tested and supported gamepads
 ✅ Wireless Xbox One Controllers (2013+)

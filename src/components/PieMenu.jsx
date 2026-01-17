@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
 import xboxLbIcon from '../img/Xbox UI/icons8-xbox-lb-96.png';
+import usePieMenuStore from '../hooks/usePieMenuStore';
 
 const DEFAULT_OPTIONS = [
     { label: 'Credits', value: 'credits' },
@@ -62,7 +63,12 @@ function PieMenu({
     // keyboardMode = true
     keyboardMode = false
 }) {
-    const [visible, setVisible] = useState(false);
+
+    const visible = usePieMenuStore((state) => state.visible);
+    const setVisible = usePieMenuStore((state) => state.setVisible);
+
+    // const [visible, setVisible] = useState(false);
+
     const [selectedIndex, setSelectedIndex] = useState(-1);
     const [thumbstick, setThumbstick] = useState({ x: 0, y: 0 });
     const requestRef = useRef();

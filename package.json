@@ -1,7 +1,7 @@
 {
   "name": "@articles-media/articles-gamepad-helper",
   "description": "Shared code for Articles Media projects and games that use a gamepad.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "imports": {
     "#root/src/*": "./src/*"
@@ -39,6 +39,10 @@
     "./useGameControllerKeyboardStore": {
       "import": "./dist/useGameControllerKeyboardStore.js",
       "require": "./dist/useGameControllerKeyboardStore.cjs"
+    },
+    "./usePieMenuStore": {
+      "import": "./dist/usePieMenuStore.js",
+      "require": "./dist/usePieMenuStore.cjs"
     },
     "./dist/style.css": "./dist/articles-gamepad-helper.css",
     "./dist/articles-gamepad-helper.css": "./dist/articles-gamepad-helper.css"
