@@ -8,6 +8,8 @@ import DpadLeft from './img/Xbox UI/DpadL.svg';
 import DpadRight from './img/Xbox UI/DpadR.svg';
 import LB from './img/Xbox UI/icons8-xbox-lb-96.png';
 import RB from './img/Xbox UI/icons8-xbox-rb-96.png';
+import RT from './img/Xbox UI/icons8-xbox-rt-96.png';
+import LT from './img/Xbox UI/icons8-xbox-lt-96.png';
 
 export const XboxIcons = {
     A,
@@ -19,7 +21,9 @@ export const XboxIcons = {
     DpadLeft,
     DpadRight,
     LB,
-    RB
+    RB,
+    RT,
+    LT
 };
 
 export default XboxIcons;

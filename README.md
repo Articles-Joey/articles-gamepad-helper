@@ -1,5 +1,7 @@
 # Articles Gamepad Helper
 
+![Preview](/src/img/articles-gamepad-helper.webp)
+
 React components to help with game development. Primarily used for Articles Media related games but made public to help others!
 
 ## Getting Started
@@ -34,6 +36,8 @@ npm run dev
     - Needed store for handling component state, exported so you can watch for and set state if needed
 - usePieMenuStore
     - Store associated with the PieMenu component
+- XboxIcons
+    - Collection of controller button icons 
 
 # Tested and supported gamepads
 ✅ Wireless Xbox One Controllers (2013+)
