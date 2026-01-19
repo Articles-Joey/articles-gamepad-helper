@@ -61,7 +61,9 @@ function PieMenu({
     onCancel,
     options = DEFAULT_OPTIONS,
     // keyboardMode = true
-    keyboardMode = false
+    keyboardMode = false,
+    className,
+    id
 }) {
 
     const visible = usePieMenuStore((state) => state.visible);
@@ -176,7 +178,8 @@ function PieMenu({
 
     return (
         <div
-            className="articles-PieMenu-component"
+            className={`articles-PieMenu-component ${className || ''}`}
+            id={id}
             style={{
                 position: 'fixed',
                 top: 0,

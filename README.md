@@ -48,6 +48,8 @@ npm run dev
 # TODO
 ⏹️ Record video demo  
 ⏹️ Create website demo  
+⏹️ Steam Controller UI Elements  
+⏹️ Playstation Controller UI Elements  
 
 # Contributing
 
@@ -56,3 +58,9 @@ You are more then welcome to help! Keep pull request small and make sure your bu
 # Support
 
 Support this package by donating to Articles Media or by contributing your time to helping with issues.
+
+# Attributions
+
+Xbox Controller UI buttons - [Icons8](https://icons8.com/)
+
+Steam Controller UI buttons - [Icons8](https://icons8.com/)

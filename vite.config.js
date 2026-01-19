@@ -17,6 +17,7 @@ export default defineConfig({
         GamepadKeyboard: resolve(__dirname, 'src/components/GamepadKeyboard.jsx'),
         PieMenu: resolve(__dirname, 'src/components/PieMenu.jsx'),
         XboxIcons: resolve(__dirname, 'src/XboxIcons.js'),
+        SteamIcons: resolve(__dirname, 'src/SteamIcons.js'),
         useGameControllerKeyboardStore: resolve(__dirname, 'src/hooks/useGameControllerKeyboardStore.js'),
         usePieMenuStore: resolve(__dirname, 'src/hooks/usePieMenuStore.js'),
       },

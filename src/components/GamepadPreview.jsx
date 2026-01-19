@@ -5,11 +5,20 @@ import '../styles/components/GamepadPreview.scss';
 
 import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
 
-const GamepadPreview = ({ controllerState, showJSON, showPreview, maxHeight, showVibrationControls }) => {
+const GamepadPreview = ({ 
+    controllerState, 
+    showJSON, 
+    showPreview, 
+    maxHeight, 
+    showVibrationControls,
+    className,
+    id
+}) => {
 
     return (
         <div
-            className='articles-GamepadPreview'
+            className={`articles-GamepadPreview ${className || ''}`}
+            id={id}
             style={{
                 ...(maxHeight && {
                     maxHeight: maxHeight,
