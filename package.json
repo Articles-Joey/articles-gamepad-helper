@@ -1,10 +1,12 @@
 {
   "name": "@articles-media/articles-gamepad-helper",
-  "description": "Shared code for Articles Media projects and games that use a gamepad.",
-  "version": "0.0.4",
+  "description": "Shared code and assets for games using React.js and gamepad/controller input, including a pie menu and on-screen controller keyboard.",
+  "version": "0.0.5",
   "type": "module",
   "imports": {
-    "#root/src/*": "./src/*"
+    "#root/src/*": "./src/*",
+    "#root/dist/*": "./dist/*",
+    "#root/public/*": "./public/*"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -56,6 +58,7 @@
       "import": "./dist/credits.json",
       "require": "./dist/credits.json"
     },
+    "./dist/img/*": "./dist/img/*",
     "./dist/style.css": "./dist/articles-gamepad-helper.css",
     "./dist/articles-gamepad-helper.css": "./dist/articles-gamepad-helper.css"
   },

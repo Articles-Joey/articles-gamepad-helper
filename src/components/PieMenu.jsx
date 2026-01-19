@@ -4,7 +4,10 @@
 // import '../styles/components/PieMenu.css';
 
 import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
-import xboxLbIcon from '../img/Xbox UI/icons8-xbox-lb-96.png';
+
+// import xboxLbIcon from '../img/Xbox UI/icons8-xbox-lb-96.png';
+import lb from "../../public/img/Xbox UI/icons8-xbox-lb-96.png";
+
 import usePieMenuStore from '../hooks/usePieMenuStore';
 
 const DEFAULT_OPTIONS = [
@@ -169,7 +172,8 @@ function PieMenu({
     if (!visible) {
         return (
             <div style={{ position: 'fixed', top: '10px', left: '10px', zIndex: 10000 }}>
-                <img src={xboxLbIcon} alt="Hold LB" style={{ width: '64px', opacity: 0.7 }} />
+                {/* <img src={xboxLbIcon} alt="Hold LB" style={{ width: '64px', opacity: 0.7 }} /> */}
+                <img src={lb} alt="Hold LB" style={{ width: '64px', opacity: 0.7 }} />
             </div>
         );
     }
@@ -211,7 +215,7 @@ function PieMenu({
             >
                 {/* Center Icon */}
                 <div style={{ position: 'relative', width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <img src={xboxLbIcon} alt="Pie Menu" style={{ width: '100%', opacity: 0.8 }} />
+                    <img src={lb} alt="Pie Menu" style={{ width: '100%', opacity: 0.8 }} />
                     {/* Thumbstick indicator */}
                     {thumbstick.x !== 0 && (
                         <div style={{
