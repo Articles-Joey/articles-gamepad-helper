@@ -21,7 +21,14 @@ const KEYS = [
     ['SPACE', 'BACKSPACE', 'FINISH']
 ];
 
-export default function GamepadKeyboard({ onFinish, onCancel, className, id, disableToggle = false, active }) {
+export default function GamepadKeyboard({ 
+    onFinish, 
+    onCancel, 
+    className, 
+    id, 
+    disableToggle = false, 
+    active 
+}) {
 
     const storeVisible = useGameControllerKeyboardStore((state) => state.visible);
     const setStoreVisible = useGameControllerKeyboardStore((state) => state.setVisible);

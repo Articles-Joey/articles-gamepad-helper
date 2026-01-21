@@ -66,7 +66,9 @@ function PieMenu({
     // keyboardMode = true
     keyboardMode = false,
     className,
-    id
+    id,
+    disableDefaultHotkey = false, 
+    active 
 }) {
 
     const visible = usePieMenuStore((state) => state.visible);
