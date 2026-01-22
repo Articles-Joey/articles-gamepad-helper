@@ -1,7 +1,7 @@
 {
   "name": "@articles-media/articles-gamepad-helper",
   "description": "Shared code and assets for games using React.js and gamepad/controller input, including a pie menu and on-screen controller keyboard.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "imports": {
     "#root/src/*": "./src/*",
@@ -33,6 +33,10 @@
     "./PieMenu": {
       "import": "./dist/PieMenu.js",
       "require": "./dist/PieMenu.cjs"
+    },
+    "./PieKeyboard": {
+      "import": "./dist/PieKeyboard.js",
+      "require": "./dist/PieKeyboard.cjs"
     },
     "./XboxIcons": {
       "import": "./dist/XboxIcons.js",

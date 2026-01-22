@@ -6,7 +6,7 @@ import '../styles/components/GamepadPreview.scss';
 import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
 
 const GamepadPreview = ({ 
-    controllerState, 
+    controllerState: propControllerState, 
     showJSON, 
     showPreview, 
     maxHeight, 
@@ -14,6 +14,30 @@ const GamepadPreview = ({
     className,
     id
 }) => {
+
+    const [fetchedState, setFetchedState] = useState(null);
+    const requestRef = useRef();
+
+    useEffect(() => {
+        if (propControllerState) return;
+
+        const updateLoop = () => {
+            const gamepads = navigator.getGamepads();
+            const gp = gamepads[0];
+            if (gp) {
+                setFetchedState({
+                    axes: [...gp.axes],
+                    buttons: Array.from(gp.buttons).map(b => ({ pressed: b.pressed, value: b.value }))
+                });
+            }
+            requestRef.current = requestAnimationFrame(updateLoop);
+        };
+        requestRef.current = requestAnimationFrame(updateLoop);
+
+        return () => cancelAnimationFrame(requestRef.current);
+    }, [propControllerState]);
+
+    const controllerState = propControllerState || fetchedState;
 
     return (
         <div

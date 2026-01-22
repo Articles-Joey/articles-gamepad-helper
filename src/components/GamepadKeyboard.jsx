@@ -21,13 +21,13 @@ const KEYS = [
     ['SPACE', 'BACKSPACE', 'FINISH']
 ];
 
-export default function GamepadKeyboard({ 
-    onFinish, 
-    onCancel, 
-    className, 
-    id, 
-    disableToggle = false, 
-    active 
+function GamepadKeyboard({
+    onFinish,
+    onCancel,
+    className,
+    id,
+    disableToggle,
+    active
 }) {
 
     const storeVisible = useGameControllerKeyboardStore((state) => state.visible);
@@ -39,9 +39,9 @@ export default function GamepadKeyboard({
 
     const setVisible = (val) => {
         if (active === undefined) {
-             // Handle functional update if needed, though store might not support it natively
-             const newVal = typeof val === 'function' ? val(storeVisible) : val;
-             setStoreVisible(newVal);
+            // Handle functional update if needed, though store might not support it natively
+            const newVal = typeof val === 'function' ? val(storeVisible) : val;
+            setStoreVisible(newVal);
         }
     };
 
@@ -57,7 +57,7 @@ export default function GamepadKeyboard({
     const [text, setText] = useState('');
     const [currentRow, setCurrentRow] = useState(1);
     const [currentCol, setCurrentCol] = useState(0);
-    
+
     const lastInputTime = useRef(0);
     const requestRef = useRef();
 
@@ -68,14 +68,15 @@ export default function GamepadKeyboard({
         if (!gp) return;
 
         const now = performance.now();
-        
+
         // Toggle Visibility with Y (Button 3)
         if (!disableToggle && gp.buttons[3].pressed) {
-             if (now - lastInputTime.current > 300) { // Longer debounce for toggle
+            if (now - lastInputTime.current > 300) { // Longer debounce for toggle
+                console.log('Toggling keyboard visibility');
                 setVisible(prev => !prev);
                 lastInputTime.current = now;
-             }
-             return;
+            }
+            return;
         }
 
         if (!visible) return;
@@ -136,13 +137,13 @@ export default function GamepadKeyboard({
             }
             moved = true;
         }
-        
+
         // Close/Cancel with B (Button 1)
         if (gp.buttons[1].pressed) {
-             setVisible(false);
-             setLastClosedTime(performance.now());
-             if (onCancel) onCancel();
-             moved = true;
+            setVisible(false);
+            setLastClosedTime(performance.now());
+            if (onCancel) onCancel();
+            moved = true;
         }
 
         if (moved) {
@@ -160,6 +161,13 @@ export default function GamepadKeyboard({
         return () => cancelAnimationFrame(requestRef.current);
     }, [handleInput]);
 
+    // return (
+    //     <div className={`keyboard-overlay ${className || ''}`} id={id}>
+    //         <div className="keyboard-display">{text}</div>
+    //         <div className="keyboard-grid"></div>
+    //     </div>
+    // )
+
     if (!visible) return null;
 
     return (
@@ -169,8 +177,8 @@ export default function GamepadKeyboard({
                 {KEYS.map((row, rIndex) => (
                     <div key={rIndex} className="keyboard-row">
                         {row.map((key, cIndex) => (
-                            <div 
-                                key={key} 
+                            <div
+                                key={key}
                                 className={`key ${rIndex === currentRow && cIndex === currentCol ? 'active' : ''} ${['SPACE', 'BACKSPACE', 'FINISH'].includes(key) ? 'wide' : ''}`}
                             >
                                 {key}
@@ -185,3 +193,5 @@ export default function GamepadKeyboard({
         </div>
     );
 };
+
+export default memo(GamepadKeyboard);
