@@ -84,6 +84,10 @@ const NUMBER_OPTIONS = [
  * @param {object} props - The component props.
  * @param {string} props.value - If provided, makes the component controlled with this value.
  * @param {string} props.onFinish - ...
+ * @param {string} props.className - If provided, makes the component controlled with this value.
+ * @param {string} props.id - Optional id for the component.
+ * @param {number} props.menuItemRadius - Radius for menu items in single mode.
+ * @param {number} props.dualMenuItemRadius - Radius for menu items in dual mode.
  * @param {function} props.onCancel - Callback to closes the pie menu without selection if in controlled visibility mode.
  * @param {boolean} [props.dual] - Optional dual thumb stick usage state.
  * @param {boolean} [props.allowDualSwitching] - Optional state to allow switching between single and dual mode.
@@ -103,6 +107,8 @@ function PieKeyboard({
     dual,
     isDisabled = false,
     allowDualSwitching,
+    menuItemRadius = 200,
+    dualMenuItemRadius = 160,
 }) {
     const storeVisible = usePieMenuStore((state) => state.visible);
     const setStoreVisible = usePieMenuStore((state) => state.setVisible);
@@ -127,6 +133,8 @@ function PieKeyboard({
     useEffect(() => {
         if (dual) {
             setDualMode(dual);
+        } else {
+            setDualMode(false);
         }
     }, [dual]);
 
@@ -291,7 +299,7 @@ function PieKeyboard({
 
     const renderOrb = (opts, selectedIdx, thumb, centerIcon, style) => {
 
-        const radius = dualMode ? 160 : 200;
+        const radius = dualMode ? dualMenuItemRadius : menuItemRadius;
 
         return (
             <div
@@ -373,10 +381,10 @@ function PieKeyboard({
         if (!leftVisible && !rightVisible) {
             return (
                 <>
-                    <div style={{ position: 'fixed', bottom: '10px', left: '10px', zIndex: 10000 }}>
+                    <div style={{ position: 'fixed', top: '10px', left: '10px', zIndex: 10000 }}>
                         <img src={lb} alt="Hold LB" style={{ width: '64px', opacity: 0.7 }} />
                     </div>
-                    <div style={{ position: 'fixed', bottom: '10px', right: '10px', zIndex: 10000 }}>
+                    <div style={{ position: 'fixed', top: '10px', right: '10px', zIndex: 10000 }}>
                         <img src={rb} alt="Hold RB" style={{ width: '64px', opacity: 0.7 }} />
                     </div>
                 </>

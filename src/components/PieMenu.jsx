@@ -3,7 +3,7 @@
 // import '#root/src/styles/components/GamepadPreview.scss';
 // import '../styles/components/PieMenu.css';
 
-import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
+import React, { useState, useEffect, useRef, useCallback, memo, useMemo } from 'react';
 
 // import xboxLbIcon from '../img/Xbox UI/icons8-xbox-lb-96.png';
 import lb from "../../public/img/Xbox UI/icons8-xbox-lb-96.png";
@@ -19,56 +19,39 @@ const DEFAULT_OPTIONS = [
     { label: 'Achievements', value: 'achievements' },
     { label: 'GitHub', value: 'github' },
     { label: 'Go Back', value: 'go_back' },
-    // { label: 'Settings', value: 'settings' },
-    // { label: 'Inventory', value: 'inventory' },
-    // { label: 'Map', value: 'map' },
-    // { label: 'Skills', value: 'skills' },
-    // { label: 'Quests', value: 'quests' },
-    // { label: 'Magic', value: 'magic' },
     { label: 'Stats', value: 'stats' },
-    // { label: 'Save', value: 'save' },
     { label: 'Settings', value: 'settings' },
 ];
 
-const LETTER_OPTIONS = [
-    { label: 'A', value: 'a' },
-    { label: 'B', value: 'b' },
-    { label: 'C', value: 'c' },
-    { label: 'D', value: 'd' },
-    { label: 'E', value: 'e' },
-    { label: 'F', value: 'f' },
-    { label: 'G', value: 'g' },
-    { label: 'H', value: 'h' },
-    { label: 'I', value: 'i' },
-    { label: 'J', value: 'j' },
-    { label: 'K', value: 'k' },
-    { label: 'L', value: 'l' },
-    { label: 'M', value: 'm' },
-    { label: 'N', value: 'n' },
-    { label: 'O', value: 'o' },
-    { label: 'P', value: 'p' },
-    { label: 'Q', value: 'q' },
-    { label: 'R', value: 'r' },
-    { label: 'S', value: 's' },
-    { label: 'T', value: 't' },
-    { label: 'U', value: 'u' },
-    { label: 'V', value: 'v' },
-    { label: 'W', value: 'w' },
-    { label: 'X', value: 'x' },
-    { label: 'Y', value: 'y' },
-    { label: 'Z', value: 'z' },
-];
+/**
+ * @typedef {Object} Option
+ * @property {number} label - Display label
+ * @property {string} value - Option value
+ * @property {function} callback - Callback function for the option
+ */
+
+/**
+ * A reusable pie keyboard component.
+ * @param {object} props - The component props.
+ * @param {string} props.className - If provided, makes the component controlled with this value.
+ * @param {string} props.id - Optional id for the component.
+ * @param {Option[]} props.options - Array of option objects for the pie menu. Each object should have 'label', 'value', and callback properties.
+ * @param {function} props.onFinish - Callback when an option is selected from the pie menu.
+ * @param {number} props.menuItemRadius - Radius for menu items in single mode.
+ * @param {function} props.onCancel - Callback to closes the pie menu without selection. Helpful if in controlled visibility mode, or a toggle visibility mode.
+ */
 
 function PieMenu({
     onFinish,
     onCancel,
     options = DEFAULT_OPTIONS,
     // keyboardMode = true
-    keyboardMode = false,
+    // keyboardMode = false,
     className,
     id,
     disableDefaultHotkey = false, 
-    active 
+    active,
+    menuItemRadius = 120,
 }) {
 
     const visible = usePieMenuStore((state) => state.visible);
@@ -80,7 +63,16 @@ function PieMenu({
     const [thumbstick, setThumbstick] = useState({ x: 0, y: 0 });
     const requestRef = useRef();
 
-    const calculatedOptions = keyboardMode ? LETTER_OPTIONS : options;
+    const calculatedOptions = useMemo(() => {
+        return [
+            ...options,
+            ...onCancel ? [{ 
+                label: 'Cancel', 
+                value: 'cancel',
+                callback: onCancel
+            }] : [],
+        ]
+    }, [options, onCancel]);
 
     // Check for gamepad input
     const updateLoop = useCallback(() => {
@@ -180,7 +172,7 @@ function PieMenu({
         );
     }
 
-    const radius = 120; // Distance of items from center
+    const radius = menuItemRadius; // Distance of items from center
 
     return (
         <div

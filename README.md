@@ -4,6 +4,12 @@
 
 React components to help with game development. Primarily used for Articles Media related games but made public to help others!
 
+## Demo
+
+View our [demo/docs](https://gamepad-helper.articles.media) at https://gamepad-helper.articles.media page with a controller connected to your computer to see the components in action.
+
+![Preview](/src/img/Demo/animated.webp)
+
 ## Getting Started
 
 For local development, navigate to this project and run this command.
@@ -49,7 +55,7 @@ npm run dev
 
 # TODO
 ⏹️ Record video demo  
-⏹️ Create website demo  
+⏹️ Typescript components
 ⏹️ Steam Controller UI Elements  
 ⏹️ Playstation Controller UI Elements  
 
