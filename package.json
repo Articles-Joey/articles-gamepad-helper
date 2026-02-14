@@ -46,6 +46,10 @@
       "import": "./dist/SteamIcons.js",
       "require": "./dist/SteamIcons.cjs"
     },
+    "./ControllerConnectionWatcher": {
+      "import": "./dist/ControllerConnectionWatcher.js",
+      "require": "./dist/ControllerConnectionWatcher.cjs"
+    },
     "./useGameControllerKeyboardStore": {
       "import": "./dist/useGameControllerKeyboardStore.js",
       "require": "./dist/useGameControllerKeyboardStore.cjs"

@@ -49,10 +49,13 @@ function PieMenu({
     // keyboardMode = false,
     className,
     id,
+    overrideDefaultHotkey,
     disableDefaultHotkey = false, 
     active,
     menuItemRadius = 120,
 }) {
+
+    // TODO - Implement hotkey override on LB with overrideDefaultHotkey, allow passing any key/button combo to open pie menu
 
     const visible = usePieMenuStore((state) => state.visible);
     const setVisible = usePieMenuStore((state) => state.setVisible);

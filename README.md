@@ -40,6 +40,8 @@ npm run dev
     - Easily configurable menu that can be used to quickly map actions to a PieMenu hidden behind a held key, defaults to LB
 - PieKeyboard
     - Easily configurable keyboard that uses thumb stick angles for faster typing
+- ControllerConnectionWatcher
+    - Sets a data attribute of data-gamepad-helper-controller-connected=true on the body and a .controller-only class that can be added to only show components when controller connected
 - useGameControllerKeyboardStore
     - Needed store for handling component state, exported so you can watch for and set state if needed
 - usePieMenuStore
