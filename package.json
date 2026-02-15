@@ -1,7 +1,7 @@
 {
   "name": "@articles-media/articles-gamepad-helper",
   "description": "Shared code and assets for games using React.js and gamepad/controller input, including a pie menu and on-screen controller keyboard.",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "imports": {
     "#root/src/*": "./src/*",
@@ -81,11 +81,11 @@
   "author": "Articles Media",
   "license": "ISC",
   "peerDependencies": {
-    "react": ">=19.2.3",
-    "react-dom": ">=19.2.3"
+    "react": ">=19.2.4",
+    "react-dom": ">=19.2.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.1.2",
+    "@vitejs/plugin-react": "^5.1.4",
     "classnames": "^2.5.1",
     "nodemon": "^3.1.11",
     "react-bootstrap": "^2.10.10",

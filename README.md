@@ -57,7 +57,7 @@ npm run dev
 
 # TODO
 ⏹️ Record video demo  
-⏹️ Typescript components
+⏹️ Typescript components  
 ⏹️ Steam Controller UI Elements  
 ⏹️ Playstation Controller UI Elements  
 

@@ -1,7 +1,17 @@
-[data-gamepad-helper-controller-connected="true"] .controller-only {
-    display: inline-block!important;
+[data-gamepad-helper-controller-connected="true"] {
+    .controller-only {
+        display: inline-block !important;
+    }
+
+    .no-controller-only {
+        display: none !important;
+    }
 }
 
 .controller-only {
-    display: none!important;
+    display: none !important;
+}
+
+.no-controller-only {
+    display: inline-block !important;
 }
