@@ -152,7 +152,7 @@ function PieKeyboard({
         if (allowDualSwitching) {
             opts = [
                 ...opts,
-                { label: 'Dual Mode', value: 'dual_mode' }, 
+                { label: 'Dual Mode', value: 'dual_mode' },
             ];
         }
         return opts;
@@ -381,10 +381,18 @@ function PieKeyboard({
         if (!leftVisible && !rightVisible) {
             return (
                 <>
-                    <div style={{ position: 'fixed', top: '10px', left: '10px', zIndex: 10000 }}>
+                    <div
+                        style={{ position: 'fixed', top: '10px', left: '10px', zIndex: 10000 }}
+                        className='pie-menu-helper-icon controller-only'
+                        data-component-library="articles"
+                    >
                         <img src={lb} alt="Hold LB" style={{ width: '64px', opacity: 0.7 }} />
                     </div>
-                    <div style={{ position: 'fixed', top: '10px', right: '10px', zIndex: 10000 }}>
+                    <div
+                        style={{ position: 'fixed', top: '10px', right: '10px', zIndex: 10000 }}
+                        className='pie-menu-helper-icon controller-only'
+                        data-component-library="articles"
+                    >
                         <img src={rb} alt="Hold RB" style={{ width: '64px', opacity: 0.7 }} />
                     </div>
                 </>
@@ -420,7 +428,11 @@ function PieKeyboard({
     else {
         if (!storeVisible) {
             return (
-                <div style={{ position: 'fixed', top: '10px', left: '10px', zIndex: 10000 }}>
+                <div
+                    style={{ position: 'fixed', top: '10px', left: '10px', zIndex: 10000 }}
+                    className='pie-menu-helper-icon controller-only'
+                    data-component-library="articles"
+                >
                     <img src={lb} alt="Hold LB" style={{ width: '64px', opacity: 0.7 }} />
                 </div>
             );

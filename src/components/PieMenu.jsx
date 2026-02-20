@@ -168,7 +168,11 @@ function PieMenu({
 
     if (!visible) {
         return (
-            <div style={{ position: 'fixed', top: '10px', left: '10px', zIndex: 10000 }}>
+            <div 
+                style={{ position: 'fixed', top: '10px', left: '10px', zIndex: 10000 }}
+                className='pie-menu-helper-icon controller-only'
+                data-component-library="articles"
+            >
                 {/* <img src={xboxLbIcon} alt="Hold LB" style={{ width: '64px', opacity: 0.7 }} /> */}
                 <img src={lb} alt="Hold LB" style={{ width: '64px', opacity: 0.7 }} />
             </div>
