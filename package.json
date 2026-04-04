@@ -82,17 +82,16 @@
   "license": "ISC",
   "peerDependencies": {
     "react": ">=19.2.4",
-    "react-dom": ">=19.2.4"
+    "react-dom": ">=19.2.4",
+    "zustand": "^5.0.10"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "^5.1.4",
+    "@vitejs/plugin-react": "^6.0.1",
     "classnames": "^2.5.1",
-    "nodemon": "^3.1.11",
+    "nodemon": "^3.1.14",
     "react-bootstrap": "^2.10.10",
     "sass": "^1.97.2",
-    "vite": "^7.3.1"
+    "vite": "^8.0.3"
   },
-  "dependencies": {
-    "zustand": "^5.0.10"
-  }
+  "dependencies": {}
 }

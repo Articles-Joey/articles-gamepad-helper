@@ -20,11 +20,11 @@ export default defineConfig({
         useGameControllerKeyboardStore: resolve(__dirname, 'src/hooks/useGameControllerKeyboardStore.js'),
         usePieMenuStore: resolve(__dirname, 'src/hooks/usePieMenuStore.js'),
       },
-      formats: ['es', 'cjs'],
-      fileName: (format, entryName) => `${entryName}.${format === 'es' ? 'js' : 'cjs'}`,
+      formats: ['es'],
+      fileName: (format, entryName) => `${entryName}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: (id) => /^(react|react-dom|react-bootstrap|swr|zustand)(\/|$)/.test(id),
       output: {
         globals: {
           react: 'React',
