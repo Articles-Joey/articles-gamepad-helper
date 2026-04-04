@@ -1,14 +1,14 @@
 {
   "name": "@articles-media/articles-gamepad-helper",
   "description": "Shared code and assets for games using React.js and gamepad/controller input, including a pie menu and on-screen controller keyboard.",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "imports": {
     "#root/src/*": "./src/*",
     "#root/dist/*": "./dist/*",
     "#root/public/*": "./public/*"
   },
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "files": [
     "dist"
@@ -18,54 +18,18 @@
     "url": "git+https://github.com/Articles-Joey/articles-gamepad-helper.git"
   },
   "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./GamepadPreview": {
-      "import": "./dist/GamepadPreview.js",
-      "require": "./dist/GamepadPreview.cjs"
-    },
-    "./GamepadKeyboard": {
-      "import": "./dist/GamepadKeyboard.js",
-      "require": "./dist/GamepadKeyboard.cjs"
-    },
-    "./PieMenu": {
-      "import": "./dist/PieMenu.js",
-      "require": "./dist/PieMenu.cjs"
-    },
-    "./PieKeyboard": {
-      "import": "./dist/PieKeyboard.js",
-      "require": "./dist/PieKeyboard.cjs"
-    },
-    "./XboxIcons": {
-      "import": "./dist/XboxIcons.js",
-      "require": "./dist/XboxIcons.cjs"
-    },
-    "./SteamIcons": {
-      "import": "./dist/SteamIcons.js",
-      "require": "./dist/SteamIcons.cjs"
-    },
-    "./ControllerConnectionWatcher": {
-      "import": "./dist/ControllerConnectionWatcher.js",
-      "require": "./dist/ControllerConnectionWatcher.cjs"
-    },
-    "./useGameControllerKeyboardStore": {
-      "import": "./dist/useGameControllerKeyboardStore.js",
-      "require": "./dist/useGameControllerKeyboardStore.cjs"
-    },
-    "./usePieMenuStore": {
-      "import": "./dist/usePieMenuStore.js",
-      "require": "./dist/usePieMenuStore.cjs"
-    },
-    "./attributions": {
-      "import": "./dist/attributions.json",
-      "require": "./dist/attributions.json"
-    },
-    "./credits": {
-      "import": "./dist/credits.json",
-      "require": "./dist/credits.json"
-    },
+    ".": "./dist/index.js",
+    "./GamepadPreview": "./dist/GamepadPreview.js",
+    "./GamepadKeyboard": "./dist/GamepadKeyboard.js",
+    "./PieMenu": "./dist/PieMenu.js",
+    "./PieKeyboard": "./dist/PieKeyboard.js",
+    "./XboxIcons": "./dist/XboxIcons.js",
+    "./SteamIcons": "./dist/SteamIcons.js",
+    "./ControllerConnectionWatcher": "./dist/ControllerConnectionWatcher.js",
+    "./useGameControllerKeyboardStore": "./dist/useGameControllerKeyboardStore.js",
+    "./usePieMenuStore": "./dist/usePieMenuStore.js",
+    "./attributions": "./dist/attributions.json",
+    "./credits": "./dist/credits.json",
     "./dist/img/*": "./dist/img/*",
     "./dist/style.css": "./dist/articles-gamepad-helper.css",
     "./dist/articles-gamepad-helper.css": "./dist/articles-gamepad-helper.css"
